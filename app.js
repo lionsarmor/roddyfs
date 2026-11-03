@@ -24,7 +24,7 @@ form.addEventListener('submit', event => {
   const subject = `Project inquiry: ${value('service')} — ${value('location')}`;
   preparedEmail = `Hello Roddy Field Services,\n\nI'd like to discuss a project.\n\nName: ${value('name')}\nEmail: ${value('email')}\nCompany: ${value('company') || 'Not specified'}\nProject location: ${value('location')}\nTarget timing: ${value('timing') || 'To be discussed'}\nService: ${value('service')}\n\nProject details:\n${value('details')}\n\nThank you,\n${value('name')}`;
   document.querySelector('#email-fallback').hidden = false;
-  window.location.href = `mailto:jamesmweeksjr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(preparedEmail)}`;
+  window.location.href = `mailto:James@roddyfs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(preparedEmail)}`;
 });
 document.querySelector('#copy-details').addEventListener('click', async () => {
   const status = document.querySelector('#copy-status');
