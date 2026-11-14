@@ -57,12 +57,12 @@
     <div class="contact-copy">
       <p class="eyebrow"><span class="status-dot"></span> SEND YOUR INFO</p>
       <h2>Get on<br><span>the bench.</span></h2>
-      <p>This form saves to the Roddy Field Services bench on our server. Attach a resume in the follow-up email if you want it on file.</p>
+      <p>Submit this application on our server. It emails James@roddyfs.com with your resume and cover letter, and saves you to the technician bench.</p>
       <a class="contact-email" href="mailto:James@roddyfs.com">James@roddyfs.com <span aria-hidden="true">↗</span></a>
       <a class="contact-phone" href="tel:+13072122648">+1 (307) 212-2648</a>
     </div>
-    <form id="apply-form">
-      <h3>Technician interest form</h3>
+    <form id="apply-form" enctype="multipart/form-data">
+      <h3>Technician application</h3>
       <div class="form-row">
         <label>Your name<input name="name" autocomplete="name" placeholder="Full name" required maxlength="100"></label>
         <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@email.com" required maxlength="150"></label>
@@ -86,15 +86,18 @@
         </select></label>
       </div>
       <label>Availability<input name="availability" placeholder="Nights, weekends, two weeks on / one off…" maxlength="180"></label>
-      <label>Skills and gear you have done<textarea name="skills" rows="4" placeholder="Racks, Cisco/Ciena, Cat6, fiber, Fluke, Toast, POS, decomm…" required maxlength="4000"></textarea></label>
+      <label>Skills and gear you have done<textarea name="skills" rows="4" placeholder="Racks, Cisco/Ciena, Cat6, fiber, Fluke, Toast, POS, decomm…" required maxlength="1000"></textarea></label>
       <label>Certifications / notes <span class="optional">(optional)</span><input name="certs" placeholder="OSHA 10, BICSI, CompTIA, CDL…" maxlength="250"></label>
-      <label class="consent-row"><input name="consent" type="checkbox" required> Roddy Field Services may keep this information and contact me about field projects. You will ask before sending my name to a customer.</label>
-      <button type="submit" class="button">Prepare application email <span aria-hidden="true">↗</span></button>
-      <p class="form-note">Opens a prepared email. Attach your resume or a photo of your tool bag before you send.</p>
-      <div id="email-fallback" hidden>
-        <p role="status">Your email draft is ready. If your email app didn’t open, copy the details and email them to James@roddyfs.com with your resume attached.</p>
-        <button type="button" id="copy-details">Copy application details</button>
-        <span id="copy-status" aria-live="polite"></span>
+      <label>Cover letter<textarea name="coverLetter" rows="6" placeholder="Why you want this work, what you have done, and when you can travel." required maxlength="8000"></textarea></label>
+      <div class="form-row">
+        <label>Resume (PDF or Word)<input name="resume" type="file" accept=".pdf,.doc,.docx,.txt,.rtf,application/pdf" required></label>
+        <label>Cover letter file <span class="optional">(optional)</span><input name="coverLetterFile" type="file" accept=".pdf,.doc,.docx,.txt,.rtf,application/pdf"></label>
+      </div>
+      <label class="consent-row"><input name="consent" type="checkbox" required> Roddy Field Services may keep this application and contact me about field projects. You will ask before sending my name to a customer.</label>
+      <button type="submit" class="button">Submit application <span aria-hidden="true">↗</span></button>
+      <p class="form-note">Files must be 5 MB or smaller. The application is emailed to James@roddyfs.com and stored on our server.</p>
+      <div id="apply-status" hidden>
+        <p role="status"></p>
       </div>
     </form>
   </section>
