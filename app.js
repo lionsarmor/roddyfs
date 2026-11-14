@@ -15,9 +15,8 @@ document.querySelectorAll('[data-service-link]').forEach(link => link.addEventLi
   document.querySelector('#service-select').value = link.dataset.serviceLink;
 }));
 const form = document.querySelector('#quote-form');
-const contactUrl = (location.hostname === 'roddyfs.com' || location.hostname === 'www.roddyfs.com' || location.hostname.startsWith('rfs.'))
-  ? '/contact'
-  : 'https://rfs.143-244-168-180.sslip.io/contact';
+const onDroplet = location.hostname.startsWith('rfs.') || location.hostname === 'apply.roddyfs.com';
+const contactUrl = onDroplet ? '/contact' : 'https://rfs.143-244-168-180.sslip.io/contact';
 form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;

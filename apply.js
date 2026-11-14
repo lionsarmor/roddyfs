@@ -14,9 +14,8 @@ navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', 
 const form = document.querySelector('#apply-form');
 const statusBox = document.querySelector('#apply-status');
 const statusText = statusBox.querySelector('p');
-const applyUrl = (location.hostname === 'roddyfs.com' || location.hostname === 'www.roddyfs.com' || location.hostname === 'apply.roddyfs.com' || location.hostname.startsWith('rfs.'))
-  ? '/apply'
-  : 'https://rfs.143-244-168-180.sslip.io/apply';
+const onDroplet = location.hostname.startsWith('rfs.') || location.hostname === 'apply.roddyfs.com';
+const applyUrl = onDroplet ? '/apply' : 'https://rfs.143-244-168-180.sslip.io/apply';
 form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
