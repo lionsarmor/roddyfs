@@ -16,7 +16,7 @@ document.querySelectorAll('[data-service-link]').forEach(link => link.addEventLi
 }));
 const form = document.querySelector('#quote-form');
 const onDroplet = location.hostname.startsWith('rfs.') || location.hostname === 'apply.roddyfs.com';
-const contactUrl = onDroplet ? '/contact' : 'https://rfs.143-244-168-180.sslip.io/contact';
+const contactUrl = onDroplet ? '/contact' : 'https://admin.roddyfs.com/contact';
 form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;

@@ -15,7 +15,7 @@ const form = document.querySelector('#apply-form');
 const statusBox = document.querySelector('#apply-status');
 const statusText = statusBox.querySelector('p');
 const onDroplet = location.hostname.startsWith('rfs.') || location.hostname === 'apply.roddyfs.com';
-const applyUrl = onDroplet ? '/apply' : 'https://rfs.143-244-168-180.sslip.io/apply';
+const applyUrl = onDroplet ? '/apply' : 'https://admin.roddyfs.com/apply';
 form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
