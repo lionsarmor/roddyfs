@@ -23,6 +23,7 @@ form.addEventListener('submit', async event => {
   const button = form.querySelector('[type=submit]');
   const payload = new FormData(form);
   payload.set('consent', 'yes');
+  payload.set('smsConsent', 'yes');
   button.disabled = true;
   statusBox.hidden = false;
   statusText.textContent = 'Sending your application…';
